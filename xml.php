@@ -17,6 +17,16 @@
     $link=$xml->createElement("link","www.google.com");
     $ticker->appendChild($link);
 
+    $ticker = $xml->createElement("ticker");
+    $ticker->setAttribute("id",2);
+    $tickers->appendChild($ticker);
+
+    $name=$xml->createElement("symbol","MRK");
+    $ticker->appendChild($name);
+
+    $link=$xml->createElement("link","www.merck.com");
+    $ticker->appendChild($link);
+
     echo "<xmp>".$xml->saveXML()."</xmp>";
 
     $xml->save("tickers.xml") or die("Error,Unable to create XML file");

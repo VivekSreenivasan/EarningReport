@@ -41,9 +41,10 @@
               </li>
           </ul>
 
-          <form action= "myprocessingscript.php" method = "post" class="navbar-form navbar-left" role="search">
+
+          <form action= "myprocessingscript.php" method = "post" class="navbar-form navbar-left">
           <div class="form-group">
-          <input name= "field1" type="text" class="form-control" placeholder="Enter Ticker Symbol">
+          <input name= "symbol" type="text" class="form-control" placeholder="Enter Ticker Symbol">
           </div>
           <button type="submit" name = "submit" value = "Save Data"class="btn btn-default">Submit</button>
           </form>
@@ -56,6 +57,8 @@
       </div>
     </nav>
 <!-- Table of stock and earning report release -->
+
+<!--Put info into Table: https://stackoverflow.com/questions/29882108/getting-data-from-text-file-and-display-it-in-html-table-->
 <div class="container">
     <table class="table table-striped table-hover ">
       <h1>Information</h1>
