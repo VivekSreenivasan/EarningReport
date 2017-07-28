@@ -10,7 +10,7 @@
 </head>
 <body>
 </head>
-    <body>
+
     <nav class="navbar navbar-default">
       <div class="container">
       <div class="navbar-header">
@@ -59,61 +59,34 @@
 <!-- Table of stock and earning report release -->
 
 <!--Put info into Table: https://stackoverflow.com/questions/29882108/getting-data-from-text-file-and-display-it-in-html-table-->
+<?php
+
+    $lines = file("mydata.txt"/*, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES*/);
+    $data = array_map(function($v){
+        list($symbol) = explode(",", $v);
+        return ["symbol" => $symbol];
+    }, $lines);
+
+?>
 <div class="container">
     <table class="table table-striped table-hover ">
       <h1>Information</h1>
       <thead>
         <tr>
-          <th>#</th>
           <th>Stock Ticker</th>
           <th>Earning Report Date</th>
           <th>Link to Stock Info</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-        <tr class="info">
-          <td>3</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-        <tr class="success">
-          <td>4</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-        <tr class="danger">
-          <td>5</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-        <tr class="warning">
-          <td>6</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-        <tr class="active">
-          <td>7</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
-        </tr>
-      </body>
+        <tbody>
+          <?php foreach($data as $symbol){ ?>
+            <tr>
+              <td>
+                <?php echo $symbol["symbol"]; ?>
+              </td>
+            </tr>
+          <?php } ?>
+        </tbody>
     </table>
 </div>
 
