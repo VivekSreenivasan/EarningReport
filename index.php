@@ -58,7 +58,7 @@
     </nav>
 <!-- Table of stock and earning report release -->
 
-<!--Put info into Table: https://stackoverflow.com/questions/29882108/getting-data-from-text-file-and-display-it-in-html-table-->
+
 <?php
 
     $lines = file("mydata.txt"/*, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES*/);
@@ -90,18 +90,6 @@
     </table>
 </div>
 
-
-<!--
-      <h1>Earnings Calendar</h1>
-        <p>Enter ticker symbols separated by a comma.</p>
-        <form action="myprocessingscript.php" method="POST">
-        <input name="field1" type="text" />
-
-        <input type="submit" name="submit" value="Save Data">
-      </form>
-
-
--->
 
 </body>
 </html>
