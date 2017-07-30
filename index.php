@@ -42,7 +42,7 @@
           </ul>
 
 
-          <form action= "myprocessingscript.php" method = "post" class="navbar-form navbar-left">
+          <form action= "php/myprocessingscript.php" method = "post" class="navbar-form navbar-left">
           <div class="form-group">
           <input name= "symbol" type="text" class="form-control" placeholder="Enter Ticker Symbol">
           </div>
@@ -89,7 +89,7 @@
               </td>
               <td>
                 <?php
-                include_once('simple_html_dom.php');
+                include_once('php/simple_html_dom.php');
 
                 $link = "https://finance.yahoo.com/calendar/earnings/?symbol=".chop($symbol["symbol"]);
                 $date = file_get_html($link)->plaintext;
