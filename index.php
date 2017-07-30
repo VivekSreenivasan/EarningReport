@@ -74,8 +74,8 @@
       <thead>
         <tr>
           <th>Stock Ticker</th>
-          <th>Earning Report Date</th>
           <th>Link to Stock Info</th>
+          <th>Earning Report Date</th>
         </tr>
       </thead>
         <tbody>
@@ -83,6 +83,33 @@
             <tr>
               <td>
                 <?php echo $symbol["symbol"]; ?>
+              </td>
+              <td>
+                <a target="_blank" href = " <?php echo $link = "https://finance.yahoo.com/quote/".chop($symbol["symbol"]); ?> ">Stock Info for <?php echo$symbol["symbol"] ?></a>
+              </td>
+              <td>
+                <?php
+                include_once('simple_html_dom.php');
+
+                $link = "https://finance.yahoo.com/calendar/earnings/?symbol=".chop($symbol["symbol"]);
+                $date = file_get_html($link)->plaintext;
+
+                $currentMonth = date("n");
+                $array = ["Jan","Feb","Mar","Apr", "May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+                $found = false;
+                for($i = $currentMonth; $i < 13; $i++)
+                {
+                  if(strpos($date, $array[$i]) !== false){
+                    $pos= strpos($date, $array[$i]);
+                    echo substr($date,$pos,22);
+                    $found = true;
+
+                  }
+                }
+                if(!$found)
+                echo "No results found…";
+                ?>
               </td>
             </tr>
           <?php } ?>
