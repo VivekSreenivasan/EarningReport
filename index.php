@@ -27,7 +27,7 @@
           <ul class="nav navbar-nav">
               <li class="active"><a href="#">Application <span class="sr-only">(current)</span></a></li>
               <li><a href="#">About</a></li>
-              <li class="dropdown">
+              <!--<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="#">Action</a></li>
@@ -38,7 +38,7 @@
                   <li class="divider"></li>
                   <li><a href="#">One more separated link</a></li>
                 </ul>
-              </li>
+              </li>-->
           </ul>
 
 
@@ -51,7 +51,7 @@
 
 
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/VivekSreenivasan/EarningReport">Fork Me!</a></li>
+          <li><a href="https://github.com/VivekSreenivasan/EarningReport" target="_blank">Fork Me!</a></li>
           </ul>
         </div>
       </div>
