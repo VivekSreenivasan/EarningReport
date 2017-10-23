@@ -107,7 +107,7 @@
 
                   }
                 }
-                if(!$found)
+                if($found == false)
                 echo "No results found…";
                 ?>
               </td>
